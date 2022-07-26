@@ -24,7 +24,7 @@ public class Loader implements CommandLineRunner {
     private void loadDetails() {
 
         if(repository.count() ==0){
-            Book book1 = new Book("OOP-using-java",987877681501L,new Date("28/08/2020"),250.83d, "eBOOK");
+            Book book1 = new Book("Spring Boot",987877681501L,new Date("28/08/2020"),250.83d, "eBOOK");
             repository.save(book1);
 
         }
