@@ -58,9 +58,9 @@ public class BookService {
         Calendar c = Calendar.getInstance();
         c.setTime(date);
 
-        c.add(Calendar.YEAR, -2);
-        c.add(Calendar.MONTH, 5);
-        c.add(Calendar.DATE, 21);
+        c.add(Calendar.YEAR, date.getYear());
+        c.add(Calendar.MONTH, date.getMonth());
+        c.add(Calendar.DATE, date.getDate());
 
         Date currentDatePlusOne = c.getTime();
         return currentDatePlusOne;
