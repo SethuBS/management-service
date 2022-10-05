@@ -52,17 +52,18 @@ public class BookService {
     }
 
     private Date dateWorkAround(Date date){
+
+        Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("Africa/Johannesburg"));
+
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-        dateFormat.format(date);
+        String dateToFormat = dateFormat.format(date);
+        Date date1 = new Date(dateToFormat);
 
-        Calendar c = Calendar.getInstance();
-        c.setTime(date);
-
-        c.add(Calendar.YEAR, date.getYear());
-        c.add(Calendar.MONTH, date.getMonth());
-        c.add(Calendar.DATE, date.getDate());
-
-        Date currentDatePlusOne = c.getTime();
+        cal = Calendar.getInstance();
+        cal.setTime(date1);
+        cal.add(Calendar.MONTH, 1);
+        cal.add(Calendar.DATE, 1);
+        Date currentDatePlusOne = cal.getTime();
         return currentDatePlusOne;
     }
 }
