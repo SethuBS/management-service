@@ -1,36 +1,27 @@
-package com.payu.management.model;
-
+package com.payu.management.dto;
 
 import com.payu.management.enums.BookType;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 import java.time.LocalDate;
 
+public class BookDTO {
 
-@Entity
-public class Book {
-
-    @Id
-    @GeneratedValue
-    @Column(updatable = false, nullable = false)
     private Integer id;
-    @Column
+
     private String name;
-    @Column
+
     private Long ISBNNumber;
-    @Column
+
     private LocalDate publishDate;
-    @Column
+
     private Double price;
-    @Column
+
     BookType bookType;
 
-    public Book(){}
+    public BookDTO() {
+    }
 
-    public Book(Integer id, String name, Long ISBNNumber, LocalDate publishDate, Double price, BookType bookType) {
+    public BookDTO(Integer id, String name, Long ISBNNumber, LocalDate publishDate, Double price, BookType bookType) {
         this.id = id;
         this.name = name;
         this.ISBNNumber = ISBNNumber;
@@ -39,7 +30,8 @@ public class Book {
         this.bookType = bookType;
     }
 
-    public Book(String name, Long ISBNNumber, LocalDate publishDate, Double price, BookType bookType) {
+
+    public BookDTO(String name, Long ISBNNumber, LocalDate publishDate, Double price, BookType bookType) {
         this.name = name;
         this.ISBNNumber = ISBNNumber;
         this.publishDate = publishDate;
